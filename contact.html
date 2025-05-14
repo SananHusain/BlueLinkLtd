@@ -1004,26 +1004,27 @@
     const submitButton = document.querySelector('button[type="submit"]');
     const formMessage = document.querySelector('.form-message');
 
-    // Re-enable submit only if terms and reCAPTCHA are valid
     function updateSubmitState() {
         const termsAccepted = termsCheckbox.checked;
         const captchaResponse = grecaptcha.getResponse();
         submitButton.disabled = !(termsAccepted && captchaResponse.length > 0);
     }
 
-    // Re-check button state when checkbox changes
     termsCheckbox.addEventListener('change', updateSubmitState);
 
-    // Called by reCAPTCHA when it succeeds
+    // Called by reCAPTCHA on success
     function recaptchaCallback() {
         updateSubmitState();
     }
 
-    // Optional: disable on load
+    // Check every 500ms in case reCAPTCHA changes
+    setInterval(updateSubmitState, 500);
+
+    // Initially disable button
     submitButton.disabled = true;
 
     form.addEventListener('submit', function (e) {
-            console.log("Submit button clicked. Form is trying to submit.");
+        console.log("Submit button clicked. Form is trying to submit.");
         const termsAccepted = termsCheckbox.checked;
         const captchaResponse = grecaptcha.getResponse();
 
@@ -1035,7 +1036,7 @@
 
         console.log("Terms accepted. Form will be submitted to contact.php.");
 
-        e.preventDefault(); // Use AJAX instead
+        e.preventDefault(); // AJAX submit
         const formData = new FormData(form);
 
         fetch('contact.php', {
@@ -1053,11 +1054,11 @@
             formMessage.innerHTML = `<span style="color: red;">Submission failed. Please try again.</span>`;
             console.error('Error:', error);
         });
-        document.querySelector('.form-message').innerText = "Sending message...";
-    }
-    
-    );
+
+        formMessage.innerText = "Sending message...";
+    });
 </script>
+
 
 
   
