@@ -602,15 +602,21 @@
                                 </div>
                                 <div
                                     class="contact-btn d-flex align-items-center justify-content-between flex-wrap  mt-4">
-                                    <button type="submit" class="theme-btn black-btn">Send Message</button>
+                                    <button type="submit" class="theme-btn black-btn" id="submit-btn" disabled>Send Message</button>
+
 <!-- this is for showing submission message  -->
 <div class="form-message"></div>
 
+<div class="g-recaptcha" data-sitekey="6LdyuDgrAAAAAGE24tfvur98-vmcjo_UKyRzHgZW"></div>
+<!-- <div class="g-recaptcha"
+     data-sitekey="6LdyuDgrAAAAAGE24tfvur98-vmcjo_UKyRzHgZW"
+     data-callback="onRecaptchaSuccess"
+     data-expired-callback="onRecaptchaExpiredOrReset"
+     data-error-callback="onRecaptchaExpiredOrReset">
+</div> -->
 
-                                    <div class="infu pt-xxl-0 pt-3">
-                                        <img src="assets/img/Avatar.png" alt="">
-                                        <p>Meet With Expert</p>
-                                    </div>
+
+
                                 </div>
                             </form>
                             </div>
@@ -953,8 +959,12 @@
     <script src="assets/js/main.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+
+
+<!-- This is for Captcha  -->
 <script>
     $(document).ready(function() {
       // Initialize the slider
@@ -985,6 +995,71 @@
       $("#budget").val(initMin + " - " + initMax);
     });
   </script>
+
+
+
+<script>
+    const form = document.getElementById('contact-form');
+    const termsCheckbox = document.getElementById('flexCheckDefault');
+    const submitButton = document.querySelector('button[type="submit"]');
+    const formMessage = document.querySelector('.form-message');
+
+    // Re-enable submit only if terms and reCAPTCHA are valid
+    function updateSubmitState() {
+        const termsAccepted = termsCheckbox.checked;
+        const captchaResponse = grecaptcha.getResponse();
+        submitButton.disabled = !(termsAccepted && captchaResponse.length > 0);
+    }
+
+    // Re-check button state when checkbox changes
+    termsCheckbox.addEventListener('change', updateSubmitState);
+
+    // Called by reCAPTCHA when it succeeds
+    function recaptchaCallback() {
+        updateSubmitState();
+    }
+
+    // Optional: disable on load
+    submitButton.disabled = true;
+
+    form.addEventListener('submit', function (e) {
+            console.log("Submit button clicked. Form is trying to submit.");
+        const termsAccepted = termsCheckbox.checked;
+        const captchaResponse = grecaptcha.getResponse();
+
+        if (!termsAccepted || captchaResponse.length === 0) {
+            e.preventDefault();
+            alert("Please accept the terms and complete the reCAPTCHA.");
+            return;
+        }
+
+        console.log("Terms accepted. Form will be submitted to contact.php.");
+
+        e.preventDefault(); // Use AJAX instead
+        const formData = new FormData(form);
+
+        fetch('contact.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            formMessage.innerHTML = `<span style="color: green;">${data}</span>`;
+            form.reset();
+            grecaptcha.reset();
+            submitButton.disabled = true;
+        })
+        .catch(error => {
+            formMessage.innerHTML = `<span style="color: red;">Submission failed. Please try again.</span>`;
+            console.error('Error:', error);
+        });
+        document.querySelector('.form-message').innerText = "Sending message...";
+    }
+    
+    );
+</script>
+
+
   
 
 

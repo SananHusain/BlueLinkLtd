@@ -1,5 +1,18 @@
 <?php
 
+$secretKey = "6LdyuDgrAAAAAIlh82K2E45ca0U8qjXoQqz_eGN8";
+$responseKey = $_POST['g-recaptcha-response'];
+$userIP = $_SERVER['REMOTE_ADDR'];
+
+$verifyUrl = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
+$response = file_get_contents($verifyUrl);
+$responseData = json_decode($response);
+
+// if (!$z->success) {
+//     die("reCAPTCHA verification failed. Please try again.");
+// }
+
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -20,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         // SMTP Configuration
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER; // Change to 0 to disable debug output
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER; 
+        // $mail->SMTPDebug = 0;
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
@@ -33,7 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Recipients
         $mail->setFrom('techysanan@gmail.com', 'Website Contact');
-        $mail->addAddress('sananhusain.sh@gmail.com'); // Your target email
+        // $mail->addAddress('bluelinkltdca@gmail.com');
+        $mail->addAddress('techysanan@gmail.com');
+
 
         // Email content
         // $mail->isHTML(true);
