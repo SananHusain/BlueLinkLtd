@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Blog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .blog {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .blog h3 {
+      margin-top: 0;
+    }
+    .alert{
+      width: 100%;
+      background : rgb(0, 255, 106);
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 900;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📝 My Blog</h1>
+
+  <h2>Add a Blog Post</h2>
+
+  <div>
+    <form action="" id="blogPost">
+      <div class="alert">Your blog posted successfully</div>
+
+ <input type="text" id="title" placeholder="Blog Title" />
+  <textarea id="content" rows="6" placeholder="Blog Content"></textarea>
+
+    <input type="text" id="technology" placeholder="Technology (e.g., JavaScript, Python)" />
+  <input type="text" id="quote" placeholder="Inspirational Quote" />
+  <input type="text" id="author" placeholder="Quote Author" />
+
+    <input type="text" id="blogImageUrl" placeholder="Enter the URl of your image" />
+  
+  <label>Upload Additional Images:</label>
+  <input type="text" id="additionalImagesUrl" placeholder="Enter URl of additional image" />
+  <div>  
+    <button type="submit">Post Blog</button>
+  </div>
+
+
+    </form>
+  </div>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="./mail.js"></script>
+
+
+</body>
+</html>
