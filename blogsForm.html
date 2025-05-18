@@ -2,79 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Blog</title>
+  <title>📝 Add Blog Post</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: auto;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f8f9fc, #d6e4ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       padding: 20px;
     }
-    input, textarea {
+
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 600px;
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      margin-bottom: 15px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      animation: slideUp 0.6s ease-out;
     }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .blog {
-      border: 1px solid #ccc;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-    .blog h3 {
-      margin-top: 0;
-    }
-    .alert{
-      width: 100%;
-      background : rgb(0, 255, 106);
-      padding: 10px 20px;
-      border-radius: 5px;
+
+    h1, h2 {
       text-align: center;
-      font-size: 18px;
-      font-weight: 900;
+      color: #333;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-color: #6a8dfb;
+      box-shadow: 0 0 8px rgba(106, 141, 251, 0.3);
+      outline: none;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      background-color: #6a8dfb;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #5276f9;
+    }
+
+    .alert {
+      width: 100%;
+      background: #d4edda;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      margin-bottom: 20px;
       display: none;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>📝 My Blog</h1>
+  <div class="container">
+    <h1>📝 My Blog</h1>
+    <h2>Add a Blog Post</h2>
 
-  <h2>Add a Blog Post</h2>
+    <form id="blogPost">
+      <div class="alert" id="successMessage">✅ Your blog was posted successfully!</div>
 
-  <div>
-    <form action="" id="blogPost">
-      <div class="alert">Your blog posted successfully</div>
+      <input type="text" id="title" placeholder="Blog Title" required />
+      <textarea id="content" rows="6" placeholder="Write your blog content here..." required></textarea>
+      <input type="text" id="technology" placeholder="Technology (e.g., JavaScript, Python)" required />
+      <input type="text" id="quote" placeholder="Inspirational Quote" />
+      <input type="text" id="author" placeholder="Quote Author" />
+      <input type="text" id="blogImageUrl" placeholder="Main Blog Image URL" />
+      <input type="text" id="additionalImagesUrl" placeholder="Additional Image URL (optional)" />
 
- <input type="text" id="title" placeholder="Blog Title" />
-  <textarea id="content" rows="6" placeholder="Blog Content"></textarea>
-
-    <input type="text" id="technology" placeholder="Technology (e.g., JavaScript, Python)" />
-  <input type="text" id="quote" placeholder="Inspirational Quote" />
-  <input type="text" id="author" placeholder="Quote Author" />
-
-    <input type="text" id="blogImageUrl" placeholder="Enter the URl of your image" />
-  
-  <label>Upload Additional Images:</label>
-  <input type="text" id="additionalImagesUrl" placeholder="Enter URl of additional image" />
-  <div>  
-    <button type="submit">Post Blog</button>
-  </div>
-
-
+      <button type="submit">Post Blog</button>
     </form>
-  </div>
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
-<script src="./mail.js"></script>
 
+    <div style="text-align: center; margin-top: 20px;">
+<button onclick="localStorage.removeItem('editBlogId'); window.location.href='blogList.html'" style="background-color: #f0f0f0; color: #333;">
+  📚 View All Blogs
+</button>
+
+</div>
+
+  </div>
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="./mail.js"></script>
 
 </body>
 </html>

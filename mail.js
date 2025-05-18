@@ -10,47 +10,95 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-var blogPostDB = firebase.database().ref("blogPost");
+const blogPostDB = firebase.database().ref("blogPost");
 
-document.getElementById('blogPost').addEventListener("submit", submitForm);
-
-function submitForm(e) {
-  e.preventDefault();
-
-  // Collect values
-  const title = document.getElementById("title").value;
-  const content = document.getElementById("content").value;
-  const technology = document.getElementById("technology").value;
-  const quote = document.getElementById("quote").value;
-  const author = document.getElementById("author").value;
-  const blogImageUrl = document.getElementById("blogImageUrl").value;
-  const additionalImageUrl = document.getElementById("additionalImagesUrl").value; // FIXED ID
-
-  // Save to Firebase
-  saveBlogs(title, content, technology, quote, author, blogImageUrl, additionalImageUrl);
-
-  // Show success message
-  document.querySelector(".alert").style.display = "block";
-
-  // Optional: Reset form
-  document.getElementById("blogPost").reset();
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
 }
 
-const saveBlogs = (title, content, technology, quote, author, blogImageUrl, additionalImageUrl) => {
-  const newBlogPost = blogPostDB.push();
-  newBlogPost.set({
-    title: title,
-    content: content,
-    technology: technology,
-    quote: quote,
-    author: author,
-    blogImageUrl: blogImageUrl,
-    additionalImageUrl: additionalImageUrl,
-    datePosted: new Date().toISOString() // Automatically add current date
-  });
-};
+window.addEventListener("DOMContentLoaded", () => {
+  const blogId = localStorage.getItem("editBlogId");
+  if (blogId) {
+    // Change UI to reflect edit mode
+    document.querySelector("h2").textContent = "Edit Blog Post";
+    const submitButton = document.querySelector("form button[type='submit']");
+    const successMessage = document.getElementById("successMessage");
 
+    if (submitButton) submitButton.textContent = "Update Blog";
+    if (successMessage) successMessage.textContent = "✅ Blog updated successfully!";
 
-const getElementVal = (id) => {
-    return document.getElementById(id).value;
- };
+    // Prefill form with blog data
+    blogPostDB.child(blogId).once("value")
+      .then(snapshot => {
+        const data = snapshot.val();
+        if (data) {
+          document.getElementById("title").value = data.title || "";
+          document.getElementById("content").value = data.content || "";
+          document.getElementById("technology").value = data.technology || "";
+          document.getElementById("quote").value = data.quote || "";
+          document.getElementById("author").value = data.author || "";
+          document.getElementById("blogImageUrl").value = data.blogImageUrl || "";
+          document.getElementById("additionalImagesUrl").value = data.additionalImagesUrl || "";
+        }
+      });
+  }
+});
+
+document.getElementById('blogPost').addEventListener("submit", function(e) {
+  e.preventDefault();
+
+const blogId = localStorage.getItem("editBlogId");
+
+  const title = document.getElementById("title").value.trim();
+  const content = document.getElementById("content").value.trim();
+  const technology = document.getElementById("technology").value.trim();
+  const quote = document.getElementById("quote").value.trim();
+  const author = document.getElementById("author").value.trim();
+  const blogImageUrl = document.getElementById("blogImageUrl").value.trim();
+  const additionalImagesUrl = document.getElementById("additionalImagesUrl").value.trim();
+  const datePosted = new Date().toISOString();
+
+  if (!title || !content) {
+    alert("Title and content are required.");
+    return;
+  }
+
+  const blogData = {
+    title,
+    content,
+    technology,
+    quote,
+    author,
+    blogImageUrl,
+    additionalImagesUrl,
+    datePosted
+  };
+
+  const successMessage = document.getElementById("successMessage");
+
+  if (blogId) {
+    blogPostDB.child(blogId).set(blogData)
+      .then(() => {
+        alert("Blog updated successfully!");
+        if (successMessage) successMessage.textContent = "✅ Blog updated successfully!";
+        localStorage.removeItem("editBlogId");
+        document.getElementById("blogPost").reset();
+        successMessage.style.display = "block";
+      })
+      .catch(err => {
+        alert("Error updating blog: " + err.message);
+      });
+  } else {
+    blogPostDB.push(blogData)
+      .then(() => {
+        alert("Blog posted successfully!");
+        if (successMessage) successMessage.textContent = "✅ Blog posted successfully!";
+        document.getElementById("blogPost").reset();
+        successMessage.style.display = "block";
+      })
+      .catch(err => {
+        alert("Error posting blog: " + err.message);
+      });
+  }
+}
