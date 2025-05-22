@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7942.58 2071.45">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-3 {
+        font-family: DMSans-SemiBold, 'DM Sans';
+        font-size: 965.74px;
+        font-weight: 600;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: #0361aa;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-9 {
+        fill: #009848;
+      }
+
+      .cls-5 {
+        font-family: DMSans-Italic, 'DM Sans';
+        font-size: 191.62px;
+        font-style: italic;
+      }
+
+      .cls-10 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-11 {
+        fill: #ee7025;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_3" data-name="Layer 3">
+    <g>
+      <g>
+        <path class="cls-11" d="m1014.67,196.3c44.95,0,81.52,36.57,81.52,81.52v863.69c0,44.95-36.57,81.52-81.52,81.52H150.97c-44.95,0-81.52-36.57-81.52-81.52V277.82c0-44.95,36.57-81.52,81.52-81.52h863.69m0-69.45H150.97C67.59,126.84,0,194.44,0,277.82v863.69c0,83.38,67.59,150.97,150.97,150.97h863.69c83.38,0,150.97-67.59,150.97-150.97V277.82c0-83.38-67.59-150.97-150.97-150.97h0Z"/>
+        <path class="cls-4" d="m1379.04,934.27c44.95,0,81.52,36.57,81.52,81.52v522.55c0,44.95-36.57,81.52-81.52,81.52h-522.55c-44.95,0-81.52-36.57-81.52-81.52v-522.55c0-44.95,36.57-81.52,81.52-81.52h522.55m0-69.45h-522.55c-83.38,0-150.97,67.59-150.97,150.97v522.55c0,83.38,67.59,150.97,150.97,150.97h522.55c83.38,0,150.97-67.59,150.97-150.97v-522.55c0-83.38-67.59-150.97-150.97-150.97h0Z"/>
+        <rect class="cls-11" x="150.97" y="1223.03" width="809.05" height="69.45"/>
+        <path class="cls-9" d="m827.26,1489.31c44.95,0,81.52,36.57,81.52,81.52v325.49c0,44.95-36.57,81.52-81.52,81.52h-325.49c-44.95,0-81.52-36.57-81.52-81.52v-325.49c0-44.95,36.57-81.52,81.52-81.52h325.49m0-69.45h-325.49c-83.38,0-150.97,67.59-150.97,150.97v325.49c0,83.38,67.59,150.97,150.97,150.97h325.49c83.38,0,150.97-67.59,150.97-150.97v-325.49c0-83.38-67.59-150.97-150.97-150.97h0Z"/>
+        <rect class="cls-4" x="705.52" y="1316.66" width="69.45" height="191.91"/>
+      </g>
+      <text class="cls-3" transform="translate(1865.23 820.87)"><tspan x="0" y="0">Bluelink</tspan><tspan class="cls-8" x="0" y="981.07">T</tspan><tspan class="cls-1" x="479.97" y="981.07">echnol</tspan><tspan class="cls-2" x="3624.39" y="981.07">o</tspan><tspan class="cls-12" x="4180.66" y="981.07">gies</tspan></text>
+      <text class="cls-5" transform="translate(2056.01 2021.82)"><tspan x="0" y="0">Connecting Inn</tspan><tspan class="cls-7" x="1346.27" y="0">o</tspan><tspan class="cls-6" x="1454.91" y="0">v</tspan><tspan x="1557.62" y="0">ation, Securing the Futu</tspan><tspan class="cls-10" x="3668.04" y="0">r</tspan><tspan x="3736.44" y="0">e</tspan></text>
+    </g>
+  </g>
+</svg>
