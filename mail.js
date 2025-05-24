@@ -1,12 +1,23 @@
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBZTgsUmEzpR33ZjCyQAywHZ-TZCw5j_lA",
+//   authDomain: "testproject-c72b7.firebaseapp.com",
+//   databaseURL: "https://testproject-c72b7-default-rtdb.firebaseio.com",
+//   projectId: "testproject-c72b7",
+//   storageBucket: "testproject-c72b7.appspot.com",
+//   messagingSenderId: "954353987668",
+//   appId: "1:954353987668:web:b370f74b59356e0cf93dc1"
+// };
 const firebaseConfig = {
-  apiKey: "AIzaSyBZTgsUmEzpR33ZjCyQAywHZ-TZCw5j_lA",
-  authDomain: "testproject-c72b7.firebaseapp.com",
-  databaseURL: "https://testproject-c72b7-default-rtdb.firebaseio.com",
-  projectId: "testproject-c72b7",
-  storageBucket: "testproject-c72b7.appspot.com",
-  messagingSenderId: "954353987668",
-  appId: "1:954353987668:web:b370f74b59356e0cf93dc1"
+  apiKey: "AIzaSyAN4py9_gR4YNoy61PaRpI6bBJogCwO0-k",
+  authDomain: "bluelink-5ce30.firebaseapp.com",
+  databaseURL: "https://bluelink-5ce30-default-rtdb.firebaseio.com", // ✅ Correct
+  projectId: "bluelink-5ce30",
+  storageBucket: "bluelink-5ce30.appspot.com", // ✅ Fixed typo here
+  messagingSenderId: "123281071731",
+  appId: "1:123281071731:web:51595031d3f4124b70d406",
+  measurementId: "G-52W50YXCBX"
 };
+
 
 firebase.initializeApp(firebaseConfig);
 
@@ -100,5 +111,6 @@ const blogId = localStorage.getItem("editBlogId");
       .catch(err => {
         alert("Error posting blog: " + err.message);
       });
+    
   }
-}
+});

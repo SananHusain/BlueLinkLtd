@@ -229,7 +229,7 @@
                             <div class="header-left">
                                 <div class="logo">
                                     <a href="index.html" class="header-logo">
-                                        <img src="assets/img/logo/black-logo.png" alt="logo-img">
+                                        <img src="assets/img/logo/logo-black.png" alt="logo-img">
                                     </a>
                                 </div>
                             </div>
@@ -238,97 +238,8 @@
                                     <div class="main-menu">
                                         <nav id="mobile-menu">
                                             <ul>
-                                                <li class="has-dropdown active menu-thumb">
-                                                    <a href="index.html">
-                                                        Home
-                                                        <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu has-homemenu">
-                                                        <li>
-                                                            <div class="homemenu-items">
-                                                                <div class="homemenu">
-                                                                    <div class="homemenu-thumb">
-                                                                        <img src="assets/img/header/home-1.jpg"
-                                                                            alt="img">
-                                                                        <div class="demo-button">
-                                                                            <a href="index.html" class="theme-btn">
-                                                                                <div class="theme-btn-inner">View Demo
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="homemenu-content text-center">
-                                                                        <h4 class="homemenu-title">
-                                                                            Home 01
-                                                                        </h4>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu">
-                                                                    <div class="homemenu-thumb mb-15">
-                                                                        <img src="assets/img/header/home-2.jpg"
-                                                                            alt="img">
-                                                                        <div class="demo-button">
-                                                                            <a href="index-2.html" class="theme-btn">
-                                                                                <div class="theme-btn-inner">View Demo
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="homemenu-content text-center">
-                                                                        <h4 class="homemenu-title">
-                                                                            Home 02
-                                                                        </h4>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu">
-                                                                    <div class="homemenu-thumb mb-15">
-                                                                        <img src="assets/img/header/home-3.jpg"
-                                                                            alt="img">
-                                                                        <div class="demo-button">
-                                                                            <a href="index-3.html" class="theme-btn">
-                                                                                <div class="theme-btn-inner">View Demo
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="homemenu-content text-center">
-                                                                        <h4 class="homemenu-title">
-                                                                            Home 03
-                                                                        </h4>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu">
-                                                                    <div class="homemenu-thumb mb-15">
-                                                                        <img src="assets/img/header/home-4.jpg"
-                                                                            alt="img">
-                                                                        <div class="demo-button">
-                                                                            <a href="index-4.html" class="theme-btn">
-                                                                                <div class="theme-btn-inner">View Demo
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="homemenu-content text-center">
-                                                                        <h4 class="homemenu-title">
-                                                                            Home 04
-                                                                        </h4>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown active d-xl-none">
-                                                    <a href="#" class="border-none">
-                                                        Home
-                                                        <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="index.html">Home 01</a></li>
-                                                        <li><a href="index-2.html">Home 02</a></li>
-                                                        <li><a href="index-3.html">Home 03</a></li>
-                                                        <li><a href="index-4.html">Home 04</a></li>
-                                                    </ul>
+                                                <li>
+                                                     <a href="index.html">Home</a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
@@ -1051,6 +962,58 @@ infrastructure, tailored solutions, and a team that cares.
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+
+
+
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAN4py9_gR4YNoy61PaRpI6bBJogCwO0-k",
+    authDomain: "bluelink-5ce30.firebaseapp.com",
+    databaseURL: "https://bluelink-5ce30-default-rtdb.firebaseio.com",
+    projectId: "bluelink-5ce30",
+    storageBucket: "bluelink-5ce30.appspot.com",
+    messagingSenderId: "123281071731",
+    appId: "1:123281071731:web:51595031d3f4124b70d406"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  // Extract blog ID from URL
+  const params = new URLSearchParams(window.location.search);
+  const blogId = params.get("id");
+
+  // Fetch blog data
+  firebase.database().ref("blogPost/" + blogId).once("value").then(snapshot => {
+    const data = snapshot.val();
+    if (!data) return;
+
+    // Update the DOM
+    document.querySelector(".blog-details-image img").src = data.blogImageUrl;
+    document.querySelector(".post-meta").innerHTML = `
+      <span><i class="fal fa-calendar-alt"></i>${new Date(data.datePosted).toLocaleDateString()}</span> |
+      <span>${data.technology || 'General'}</span>
+    `;
+    document.querySelector(".post-content h3").innerText = data.title;
+    document.querySelectorAll(".post-content p")[0].innerText = data.content;
+    document.querySelectorAll(".post-content blockquote")[0].innerText = data.quote || '';
+    document.querySelector(".wp-block-quote .title span").innerText = data.author || '';
+
+    // Optional: Show additional images
+    const additional = data.additionalImagesUrl?.split(",") || [];
+    const container = document.querySelector(".row.mt-5.g-4");
+    container.innerHTML = additional.map(img => `
+      <div class="col-lg-6 col-12">
+        <div class="image-3">
+          <img src="${img.trim()}" alt="">
+        </div>
+      </div>
+    `).join('');
+  });
+</script>
+
 </body>
 
 </html>

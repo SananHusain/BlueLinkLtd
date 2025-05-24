@@ -229,7 +229,7 @@
                             <div class="header-left">
                                 <div class="logo">
                                     <a href="index.html" class="header-logo">
-                                        <img src="assets/img/logo/black-logo.png" alt="logo-img">
+                                        <img src="assets/img/logo/logo-black.png" alt="logo-img">
                                     </a>
                                 </div>
                             </div>
@@ -238,97 +238,8 @@
                                     <div class="main-menu">
                                         <nav id="mobile-menu">
                                             <ul>
-                                                <li class="has-dropdown active menu-thumb">
-                                                    <a href="index.html">
-                                                        Home
-                                                        <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu has-homemenu">
-                                                        <li>
-                                                            <div class="homemenu-items">
-                                                                <div class="homemenu">
-                                                                    <div class="homemenu-thumb">
-                                                                        <img src="assets/img/header/home-1.jpg"
-                                                                            alt="img">
-                                                                        <div class="demo-button">
-                                                                            <a href="index.html" class="theme-btn">
-                                                                                <div class="theme-btn-inner">View Demo
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="homemenu-content text-center">
-                                                                        <h4 class="homemenu-title">
-                                                                            Home 01
-                                                                        </h4>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu">
-                                                                    <div class="homemenu-thumb mb-15">
-                                                                        <img src="assets/img/header/home-2.jpg"
-                                                                            alt="img">
-                                                                        <div class="demo-button">
-                                                                            <a href="index-2.html" class="theme-btn">
-                                                                                <div class="theme-btn-inner">View Demo
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="homemenu-content text-center">
-                                                                        <h4 class="homemenu-title">
-                                                                            Home 02
-                                                                        </h4>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu">
-                                                                    <div class="homemenu-thumb mb-15">
-                                                                        <img src="assets/img/header/home-3.jpg"
-                                                                            alt="img">
-                                                                        <div class="demo-button">
-                                                                            <a href="index-3.html" class="theme-btn">
-                                                                                <div class="theme-btn-inner">View Demo
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="homemenu-content text-center">
-                                                                        <h4 class="homemenu-title">
-                                                                            Home 03
-                                                                        </h4>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu">
-                                                                    <div class="homemenu-thumb mb-15">
-                                                                        <img src="assets/img/header/home-4.jpg"
-                                                                            alt="img">
-                                                                        <div class="demo-button">
-                                                                            <a href="index-4.html" class="theme-btn">
-                                                                                <div class="theme-btn-inner">View Demo
-                                                                                </div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="homemenu-content text-center">
-                                                                        <h4 class="homemenu-title">
-                                                                            Home 04
-                                                                        </h4>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown active d-xl-none">
-                                                    <a href="#" class="border-none">
-                                                        Home
-                                                        <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="index.html">Home 01</a></li>
-                                                        <li><a href="index-2.html">Home 02</a></li>
-                                                        <li><a href="index-3.html">Home 03</a></li>
-                                                        <li><a href="index-4.html">Home 04</a></li>
-                                                    </ul>
+                                                <li>
+                                                     <a href="index.html">Home</a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
@@ -629,15 +540,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="page-nav-wrap mt-5 text-center wow fadeInUp" data-wow-delay=".3s">
-                    <ul>
-                        <li><a class="page-numbers" href="#"><i class="far fa-angle-right"></i></a></li>
-                        <li><a class="page-numbers" href="#">01</a></li>
-                        <li><a class="page-numbers" href="#">02</a></li>
-                        <li><a class="page-numbers" href="#">03</a></li>
-                        <li><a class="page-numbers" href="#"><i class="far fa-angle-right"></i></a></li>
-                    </ul>
-                </div>
+<div id="pagination" class="page-nav-wrap mt-5 text-center wow fadeInUp" data-wow-delay=".3s" style="display: none;">
+  <ul>
+    <li><a class="page-numbers" href="#"><i class="far fa-angle-left"></i></a></li>
+    <li><a class="page-numbers" href="#">01</a></li>
+    <li><a class="page-numbers" href="#"><i class="far fa-angle-right"></i></a></li>
+  </ul>
+</div>
+
             </div>
         </section>
 
@@ -964,6 +874,64 @@ infrastructure, tailored solutions, and a team that cares.
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+
+
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAN4py9_gR4YNoy61PaRpI6bBJogCwO0-k",
+    authDomain: "bluelink-5ce30.firebaseapp.com",
+    databaseURL: "https://bluelink-5ce30-default-rtdb.firebaseio.com",
+    projectId: "bluelink-5ce30",
+    storageBucket: "bluelink-5ce30.appspot.com",
+    messagingSenderId: "123281071731",
+    appId: "1:123281071731:web:51595031d3f4124b70d406",
+    measurementId: "G-52W50YXCBX"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+  const blogRow = document.querySelector(".blog-inner .row");
+
+  firebase.database().ref("blogPost").once("value").then(snapshot => {
+    blogRow.innerHTML = ""; // Clear hardcoded content
+    snapshot.forEach(childSnapshot => {
+      const blog = childSnapshot.val();
+
+      const blogHTML = `
+        <div class="col-xl-4 col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="200ms">
+          <div class="single-blog-item">
+            <div class="image">
+              <img src="${blog.blogImageUrl || 'assets/img/blog/default.jpg'}" alt="">
+            </div>
+            <div class="content">
+              <ul>
+                <li>${blog.technology || 'General'}</li>
+                <li> <i class="fas fa-circle"></i></li>
+                <li>${new Date(blog.datePosted).toLocaleDateString()}</li>
+              </ul>
+              <h3>
+                <a href="#">${blog.title}</a>
+              </h3>
+              <p>${blog.content.slice(0, 100)}...</p>
+              <a href="blogs-details.html" class="link-btn">
+                Read More <i class="far fa-long-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      blogRow.insertAdjacentHTML("beforeend", blogHTML);
+    });
+  });
+</script>
+
+
 </body>
 
 </html>
