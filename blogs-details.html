@@ -221,7 +221,7 @@
         </div>
 
         <!-- Header Section Start -->
-        <header>
+          <header>
             <div id="header-sticky" class="header-1">
                 <div class="container">
                     <div class="mega-menu-wrapper">
@@ -276,15 +276,7 @@
                                                     </ul>
                                                 </li>
                                                 <li>
-                                                    <a href="#">
-                                                        News
-                                                        <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="blogs-grid.html">Blog Grid</a></li>
-                                                        <li><a href="blog-news.html">Blog & News</a></li>
-                                                        <li><a href="blogs-details.html">Blog Details</a></li>
-                                                    </ul>
+                                                    <a href="blogs-grid.html">Blogs</a>
                                                 </li>
                                                 <li>
                                                     <a href="contact.html">Contact</a>
@@ -343,98 +335,68 @@
                         <div class="col-12 col-xxl-8 col-xl-7">
                             <div class="blog-post-details border-wrap mt-0">
                                 <div class="blog-details-image wow fadeInUp" data-wow-delay="100ms">
-                                    <img src="assets/img/blog/details-1.jpg" alt="">
+                                    <img id="main-image" src="assets/img/blog/details-1.jpg" alt="">
                                 </div>
                                 <div class="single-blog-post post-details mt-0 wow fadeInUp" data-wow-delay="200ms">
                                     <div class="post-content pt-0">
-                                        <div class="post-meta mt-3">
-                                            <span><i class="fal fa-calendar-alt"></i>4th February 2025</span>
-                                            |
-                                            <span>Technology</span>
-                                        </div>
-                                        <h3 class="mt-0">The whimsically named Egg Canvas brainchild </h3>
-                                        <p>
-                                            he whimsically named Egg Canvas is the brainchild of Erica Choi, a design
-                                            director and photo Sit amet
-                                            consect velit integer tincidunt scelerisque volutpat neque fermeny massa
-                                            lacus. grapher based in York.
-                                            Why the name “Egg Canvas Erica was inspired by her Korean childhood
-                                            nickname, which means egg
-                                            while “canvas” medium with wh art is created. “Egg Canvas therefore, is her
-                                            life—creating beautiful
-                                            things each day a blank canvas.
-                                        </p>
-                                        <p class="mt-4">
-                                            We have covered many special events such as fireworks, fairs, parades,
-                                            races, walks, awards ceremonies,
-                                            fashion shows, sporting events, and even a memorial service.
-                                        </p>
-                                        <p class="mt-4">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate
-                                            vestibulum rhon cus,
-                                            dolor eget viverra pretium, dolor tellus aliquet nunc, vitae ultricies erat
-                                            elit eu lacus. Vestibulum non
-                                            justo fun consectetur, cursus ante, tincidunt sapien. Nulla quis diam sit
-                                            amet turpis interd enim.
-                                            Vivamus fauc ex sed nibh egestas elementum. Mauris et bibendum
-                                        </p>
-                                        <div class="wp-block-quote">
-                                            <blockquote>
-                                                Your time is limited, so don’t waste it living someone else’s life.
-                                                Don’t be trapped by dogma – which is living with the results
-                                            </blockquote>
-                                            <div class="title d-flex align-items-center justify-content-between">
-                                                <span>John Mehedii</span>
-                                                <div class="icon">
-                                                    <i class="flaticon-quote"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h2 class="mt-0">Let our investment management team </h2>
-                                        <div class="row">
-                                            <div class="col-xl-7 col-lg-6 col-12">
-                                                <ul class="checked-list">
-                                                    <li>Lorem Ipsum generators on the tend to repeat.</li>
-                                                    <li>If you are going to use a passage.</li>
-                                                    <li>Lorem Ipsum generators on the tend to repeat.</li>
-                                                    <li>Lorem Ipsum generators on the tend to repeat.</li>
-                                                    <li> If you are going to use a passage.</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xl-5 col-lg-6 col-12">
-                                                <div class="image-2 mt-3">
-                                                    <img src="assets/img/blog/details-2.jpg" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-5 g-4">
-                                            <div class="col-lg-6 col-12">
-                                                <div class="image-3">
-                                                    <img src="assets/img/blog/details-3.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-12">
-                                                <div class="image-3">
-                                                    <img src="assets/img/blog/details-4.jpg" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="mt-4">
-                                            We have covered many special events such as fireworks, fairs, parades,
-                                            races, walks, awards ceremonies, fashion shows, sporting events, and even a
-                                            memorial service.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            vestibulum rhoncus, dolor eget viverra pretium, dolor ellus aliquet nunc,
-                                        </p>
-                                    </div>
+  <div class="post-meta mt-3" id="event-meta">
+    <!-- This will be filled dynamically -->
+  </div>
+
+  <h3 id="event-title" class="mt-0">Loading title...</h3>
+
+  <p id="event-description">
+    Loading description...
+  </p>
+
+  <div class="wp-block-quote">
+    <blockquote id="event-quote">Loading quote...</blockquote>
+    <div class="title d-flex align-items-center justify-content-between">
+      <span id="event-author">— Loading author</span>
+      <div class="icon">
+        <i class="flaticon-quote"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- <h2 class="mt-0">Let our investment management team</h2> -->
+
+  <!-- <div class="row">
+    <div class="col-xl-7 col-lg-6 col-12">
+      <ul class="checked-list">
+        <li>Lorem Ipsum generators on the tend to repeat.</li>
+        <li>If you are going to use a passage.</li>
+        <li>Lorem Ipsum generators on the tend to repeat.</li>
+        <li>Lorem Ipsum generators on the tend to repeat.</li>
+        <li>If you are going to use a passage.</li>
+      </ul>
+    </div>
+    <div class="col-xl-5 col-lg-6 col-12">
+      <div class="image-2 mt-3">
+        <img id="main-image" src="assets/img/blog/details-2.jpg" alt="Main blog image">
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row mt-5 g-4" id="additional-images">
+    <!-- Additional images will be injected here -->
+  </div>
+
+  <!-- <p class="mt-4">
+    We have covered many special events such as fireworks, fairs, parades, races, walks, awards ceremonies,
+    fashion shows, sporting events, and even a memorial service. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </p> -->
+</div>
+
                                 </div>
                                 <div class="row tag-share-wrap wow fadeInUp" data-wow-delay="300ms">
                                     <div class="col-lg-8 col-12">
                                         <div class="tagcloud d-flex ">
                                             <h4>Tag:</h4>
-                                            <a href="blog-details.html">Business</a>
-                                            <a href="blog-details.html">Design</a>
-                                            <a href="blog-details.html">apps</a>
-                                            <a href="blog-details.html">data</a>
+                                            <a href="blogs-details.html">Business</a>
+                                            <a href="blogs-details.html">Design</a>
+                                            <a href="blogs-details.html">apps</a>
+                                            <a href="blogs-details.html">data</a>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-12 mt-3 mt-lg-0">
@@ -981,38 +943,40 @@ infrastructure, tailored solutions, and a team that cares.
 
   firebase.initializeApp(firebaseConfig);
 
-  // Extract blog ID from URL
-  const params = new URLSearchParams(window.location.search);
-  const blogId = params.get("id");
+  const blogId = new URLSearchParams(window.location.search).get("id");
 
-  // Fetch blog data
-  firebase.database().ref("blogPost/" + blogId).once("value").then(snapshot => {
-    const data = snapshot.val();
-    if (!data) return;
+  if (!blogId) {
+    document.getElementById("event-title").textContent = "Event not found.";
+  } else {
+    firebase.database().ref("blogPost/" + blogId).once("value").then(snapshot => {
+      const data = snapshot.val();
+      if (!data) {
+        document.getElementById("event-title").textContent = "Event not found.";
+        return;
+      }
 
-    // Update the DOM
-    document.querySelector(".blog-details-image img").src = data.blogImageUrl;
-    document.querySelector(".post-meta").innerHTML = `
-      <span><i class="fal fa-calendar-alt"></i>${new Date(data.datePosted).toLocaleDateString()}</span> |
-      <span>${data.technology || 'General'}</span>
-    `;
-    document.querySelector(".post-content h3").innerText = data.title;
-    document.querySelectorAll(".post-content p")[0].innerText = data.content;
-    document.querySelectorAll(".post-content blockquote")[0].innerText = data.quote || '';
-    document.querySelector(".wp-block-quote .title span").innerText = data.author || '';
+      document.getElementById("event-title").textContent = data.title;
+      document.getElementById("event-meta").textContent = `${new Date(data.datePosted).toLocaleDateString()} | ${data.technology || 'General'}`;
+      document.getElementById("event-description").textContent = data.content;
+      document.getElementById("main-image").src = data.blogImageUrl;
+      document.getElementById("event-quote").textContent = data.quote;
+      document.getElementById("event-author").textContent = `— ${data.author}`;
 
-    // Optional: Show additional images
-    const additional = data.additionalImagesUrl?.split(",") || [];
-    const container = document.querySelector(".row.mt-5.g-4");
-    container.innerHTML = additional.map(img => `
-      <div class="col-lg-6 col-12">
-        <div class="image-3">
-          <img src="${img.trim()}" alt="">
-        </div>
-      </div>
-    `).join('');
-  });
+      const additionalContainer = document.getElementById("additional-images");
+      const additional = data.additionalImagesUrl?.split(",") || [];
+      additional.forEach(url => {
+        const img = document.createElement("img");
+        img.src = url.trim();
+        img.alt = "Additional Image";
+        img.style = "margin-top: 20px; border-radius: 12px; width: 100%; max-width: 500px;";
+        additionalContainer.appendChild(img);
+      });
+    });
+  }
 </script>
+
+
+
 
 </body>
 

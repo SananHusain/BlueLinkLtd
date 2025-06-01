@@ -99,6 +99,10 @@
   </div>
 
   <script>
+
+        if (localStorage.getItem("isLoggedIn") === "true") {
+      window.location.href = "blogsForm.html";
+    }
     const predefinedEmail = "sanan@gmail.com";   // ✅ Set your admin email
     const predefinedPassword = "Sanan@123";         // ✅ Set your admin password
 
@@ -108,11 +112,12 @@
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
 
-      if (email === predefinedEmail && password === predefinedPassword) {
-        window.location.href = "blogsForm.html";  // ✅ Redirect to blog page
-      } else {
-        document.getElementById("error").style.display = "block";
-      }
+if (email === predefinedEmail && password === predefinedPassword) {
+  localStorage.setItem("isLoggedIn", "true");  // ✅ set login flag
+  window.location.href = "blogsForm.html";
+} else {
+  document.getElementById("error").style.display = "block";
+}
     });
   </script>
 
