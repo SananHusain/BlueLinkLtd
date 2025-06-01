@@ -859,7 +859,7 @@
 
 
         <!-- Contact-us Section Start -->
-        <section class="contact-us-wrapper contact-us-2 section-padding">
+       <section class="contact-us-wrapper contact-us-2 section-padding">
             <div class="shape">
                 <img class="shape-1" src="assets/img/shape/shape-21.png" alt="">
                 <img class="shape-2" src="assets/img/shape/shape-11.png" alt="">
@@ -869,24 +869,24 @@
                 <div class="section-title text-center">
                     <div class="sub-title"><span>CONTACT US</span>
                     </div>
-                    <h2 class="split-text right">Dealing in All <br> Professional IT Services</h2>
+                    <h2>Dealing in All <br> Professional IT Services</h2>
                 </div>
                 <div class="contact-us-inner">
                     <div class="row g-5">
                         <div class="col-xl-6 col-lg-12 col-md-12 pe-xl-0 wow fadeInLeft" data-wow-delay="300ms">
                             <div class="contact-left">
-                                <form action="#" id="contact-form" method="POST">
+                                <form action="contact.php" id="contact-form" method="POST">
                                     <div class="row g-4">
                                         <div class="col-lg-6 pe-0 wow fadeInUp" data-wow-delay=".2">
                                             <span>First Name</span>
                                             <div class="form-clt">
-                                                <input type="text" name="name" placeholder="First Name">
+                                                <input type="text" name="first_name" placeholder="First Name">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 pe-0 wow fadeInUp" data-wow-delay=".6">
                                             <span>Last Name</span>
                                             <div class="form-clt">
-                                                <input type="text" name="name" placeholder="Last Name">
+                                                <input type="text" name="last_name" placeholder="Last Name">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 pe-0 wow fadeInUp" data-wow-delay=".4">
@@ -898,72 +898,85 @@
                                         <div class="col-lg-6 pe-0 wow fadeInUp" data-wow-delay=".2">
                                             <span>Phone Number</span>
                                             <div class="form-clt">
-                                                <input type="text" name="name" placeholder="Your Phone">
+                                                <input type="text" name="phone" placeholder="Your Phone">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 pe-0 wow fadeInUp" data-wow-delay=".6">
                                             <span>Country</span>
                                             <div class="form-clt">
-                                                <input type="text" name="phone" placeholder="Your Country">
+                                                <input type="text" name="country" placeholder="Your Country">
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </div>               
                                 <div class="categories mt-4 pt-3">
-                                    <span class="fw-semibold">What's the type of your company?</span>
-                                    <div class="categories-items mt-2">
-                                        <div class="single-item">It Company</div>
-                                        <div class="single-item">Business</div>
-                                        <div class="single-item">Cyber Security</div>
-                                        <div class="single-item">Other</div>
+                                  <span class="fw-semibold">What's the type of your company?</span>
+                                  <div class="categories-items mt-2">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="company_type" value="IT Company" id="company-it">
+                                      <label class="form-check-label" for="company-it">IT Company</label>
                                     </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="company_type" value="Business" id="company-business">
+                                      <label class="form-check-label" for="company-business">Business</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="company_type" value="Cyber Security" id="company-cyber">
+                                      <label class="form-check-label" for="company-cyber">Cyber Security</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="company_type" value="Other" id="company-other">
+                                      <label class="form-check-label" for="company-other">Other</label>
+                                    </div>
+                                  </div>
                                 </div>
+                                
+
+                                
                                 <div class="checked-box mt-4 pt-3">
                                     <span class="fw-semibold">What you need from us?</span>
                                     <div class="checked-box-items mt-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label">
-                                                App Design
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label">
-                                                Digital Marketing
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label">
-                                                UI/UX Design
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label">
-                                                Cloud service
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="">
-                                            <label class="form-check-label">
-                                                Other Services
-                                            </label>
-                                        </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="services[]" value="App Design" id="service-app-design">
+                                        <label class="form-check-label" for="service-app-design">App Design</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="services[]" value="Digital Marketing" id="service-digital-marketing">
+                                        <label class="form-check-label" for="service-digital-marketing">Digital Marketing</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="services[]" value="UI/UX Design" id="service-uiux">
+                                        <label class="form-check-label" for="service-uiux">UI/UX Design</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="services[]" value="Cloud Service" id="service-cloud">
+                                        <label class="form-check-label" for="service-cloud">Cloud Service</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="services[]" value="Other Services" id="service-other">
+                                        <label class="form-check-label" for="service-other">Other Services</label>
+                                      </div>
                                     </div>
-                                </div>
+                                  </div>                                  
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-12 col-md-12 wow fadeInRight" data-wow-delay="300ms">
                             <div class="contact-right ps-xl-5 ms-xl-3">
-                                <div class="price-ranger">
+                                  <div class="price-ranger">
                                     <span>Your Service Budget</span>
                                     <div id="slider-range"></div>
+                                  
                                     <div class="ranger-min-max-block pt-3">
-                                        <span class="min">$56</span> <span class="max">$1578</span>
+                                      <span class="min">$56</span>
+                                      <span class="max">$1578</span>
                                     </div>
-                                </div>
+                                  
+                                    <input type="hidden" name="budget" id="budget" value="56 - 1578">
+                                  
+                                    <!-- Just for testing -->
+                                    <button onclick="alert(document.getElementById('budget').value)">Check Budget</button>
+                                  </div>
+
+
                                 <div class="col-lg-12 wow fadeInUp mt-4" data-wow-delay=".8">
                                     <span>Your Message</span>
                                     <div class="form-clt-big form-clt">
@@ -971,21 +984,23 @@
                                     </div>
                                 </div>
                                 <div class="form-check mt-3">
-                                    <input class="form-check-input" type="checkbox" value="">
-                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
                                         Click the box and agree to our terms and conditions
                                     </label>
                                 </div>
                                 <div
                                     class="contact-btn d-flex align-items-center justify-content-between flex-wrap  mt-4">
-                                    <button type="submit" class="theme-btn black-btn">Send Message</button>
+                                    <button type="submit" class="theme-btn black-btn" id="submit-btn" disabled>Send Message</button>
 
-                                    <div class="infu pt-xxl-0 pt-3">
-                                        <img src="assets/img/Avatar.png" alt="">
-                                        <p>Meet With Expert</p>
-                                    </div>
+<!-- this is for showing submission message  -->
+<div class="form-message"></div>
+<div class="g-recaptcha" data-sitekey="6LdyuDgrAAAAAGE24tfvur98-vmcjo_UKyRzHgZW"></div>
+<!-- <div class="g-recaptcha" data-sitekey="6Lc5Iz8rAAAAAGjfwapWo_wfMJHyzsVrltDG9yZ5"></div> -->
                                 </div>
+                            </form>
                             </div>
+                        
                         </div>
                     </div>
                 </div>
@@ -1459,28 +1474,28 @@
                         <div class="icon"><i class="flaticon-team"></i></div>
                         <div class="count-box">
                             <h2><span class="count">69</span>+</h2>
-                            <p>Team Member</p>
+                          <p>Passionate Team Members</p>
                         </div>
                     </div>
                     <div class="signle-funfact-item wow fadeInUp" data-wow-delay="400ms">
                         <div class="icon"><i class="flaticon-test"></i></div>
                         <div class="count-box">
                             <h2><span class="count">854</span>+</h2>
-                            <p>Media Posts</p>
+                            <p>Client Interactions</p>
                         </div>
                     </div>
                     <div class="signle-funfact-item wow fadeInUp" data-wow-delay="600ms">
                         <div class="icon"><i class="flaticon-mountain"></i></div>
                         <div class="count-box">
                             <h2><span class="count">459</span>+</h2>
-                            <p>Completed Projects</p>
+                            <p>Projects Delivered</p>
                         </div>
                     </div>
                     <div class="signle-funfact-item wow fadeInUp" data-wow-delay="800ms">
                         <div class="icon"><i class="flaticon-project"></i></div>
                         <div class="count-box">
                             <h2><span class="count">98</span>%+</h2>
-                            <p>Successful Clients</p>
+                            <p>Client Satisfaction Rate</p>
                         </div>
                     </div>
                 </div>
@@ -1502,9 +1517,8 @@
                                 <div class="icon-1"><i class="flaticon-conversation"></i></div>
                                 <div class="icon-2">01</div>
                             </div>
-                            <h4 class="mb-2">Project Discussion</h4>
-                            <p>Accelerate innovation with world-class tech teams We’ll match you to an entire remote
-                                team.</p>
+                            <h4 class="mb-2">Submit a Request</h4>
+                            <p>Reach out online or by phone to request support tailored to your issue or need.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 mt-xl-5  wow fadeInUp" data-wow-delay="400ms">
@@ -1514,9 +1528,8 @@
                                 <div class="icon-1"><i class="flaticon-cms"></i></div>
                                 <div class="icon-2">02</div>
                             </div>
-                            <h4 class="mb-2">Testing & Trying</h4>
-                            <p>Accelerate innovation with world-class tech teams We’ll match you to an entire remote
-                                team.</p>
+                            <h4 class="mb-2">Assign Technician</h4>
+                            <p>We quickly match your request with a qualified technician ready to assist you.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6  wow fadeInUp" data-wow-delay="600ms">
@@ -1526,9 +1539,8 @@
                                 <div class="icon-1"><i class="flaticon-maintenance"></i></div>
                                 <div class="icon-2">03</div>
                             </div>
-                            <h4 class="mb-2">Execute & Install</h4>
-                            <p>Accelerate innovation with world-class tech teams We’ll match you to an entire remote
-                                team.</p>
+                            <h4 class="mb-2">On-Site or Remote Fix</h4>
+                            <p>Get fast, hassle-free support either remotely or with an on-site visit.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 mt-xl-5  wow fadeInUp" data-wow-delay="400ms">
@@ -1537,9 +1549,8 @@
                                 <div class="icon-1"><i class="flaticon-positive-review"></i></div>
                                 <div class="icon-2">04</div>
                             </div>
-                            <h4 class="mb-2">Review & Fixing</h4>
-                            <p>Accelerate innovation with world-class tech teams We’ll match you to an entire remote
-                                team.</p>
+                            <h4 class="mb-2">Follow-Up & Feedback</h4>
+                            <p>We ensure everything is working and welcome your feedback to improve service.</p>
                         </div>
                     </div>
                 </div>
@@ -1573,7 +1584,7 @@
                             <div class="section-title">
                                 <div class="sub-title"><span>OUR TESTIMONIAL</span>
                                 </div>
-                                <h2 class="split-text right">20k+ Satisfied Clients Worldwide</h2>
+                                <h2 class="split-text right">Trusted by Businesses Across Industries</h2>
                             </div>
                             <div class="swiper testimonial-slide-3">
                                 <div class="swiper-wrapper">
@@ -1586,22 +1597,17 @@
                                                 <li><i class="fas fa-star"></i></li>
                                                 <li><i class="fas fa-star"></i></li>
                                             </ul>
-                                            <p class="text">
-                                                I believe in lifelong learning and they are a great place to learn from
-                                                experts. I have learned a lot and recommend it
-                                            </p>
+                                    <p class="text">
+                                        Resolved our server issue in under 2 hours – lifesaver! Professional and quick to respond.
+                                    </p>
                                             <div class="client-info">
                                                 <div class="client-img">
                                                     <img src="assets/img/testimonial/02.png" alt="client-img">
                                                     <div class="icon"><i class="flaticon-quote"></i></div>
                                                 </div>
                                                 <div class="content">
-                                                    <h6>
-                                                        William Jekson
-                                                    </h6>
-                                                    <p>
-                                                        Product Manager
-                                                    </p>
+                                            <h6>Linda Martinez</h6>
+                                            <p>Office Manager, Law Firm</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1644,22 +1650,41 @@
                                                 <li><i class="fas fa-star"></i></li>
                                                 <li><i class="fas fa-star"></i></li>
                                             </ul>
-                                            <p class="text">
-                                                I believe in lifelong learning and they are a great place to learn from
-                                                experts. I have learned a lot and recommend it
-                                            </p>
+                                    <p class="text">
+                                        Bluelink helped us migrate our entire network to a secure cloud setup without any downtime. Their team is amazing.
+                                    </p>
                                             <div class="client-info">
                                                 <div class="client-img">
                                                     <img src="assets/img/testimonial/02.png" alt="client-img">
                                                     <div class="icon"><i class="flaticon-quote"></i></div>
                                                 </div>
                                                 <div class="content">
-                                                    <h6>
-                                                        William Jekson
-                                                    </h6>
-                                                    <p>
-                                                        Product Manager
-                                                    </p>
+                                            <h6>Jason Tan</h6>
+                                            <p>IT Director, Government Office</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="single-testimonial-item  wow fadeInUp" data-wow-delay="200ms">
+                                            <ul class="client-rating d-flex align-items-center">
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                            </ul>
+                                    <p class="text">
+                                        Our retail chain saw a dramatic improvement in system uptime after partnering with Bluelink. Reliable and efficient.
+                                    </p>
+                                            <div class="client-info">
+                                                <div class="client-img">
+                                                    <img src="assets/img/testimonial/02.png" alt="client-img">
+                                                    <div class="icon"><i class="flaticon-quote"></i></div>
+                                                </div>
+                                                <div class="content">
+                                            <h6>Monica Ray</h6>
+                                            <p>Operations Lead, Retail Group</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1782,116 +1807,25 @@
         </section>
 
         <!-- Blog Section Start -->
-        <section class="blog-wrapper blog-1 style-3 section-padding section-bg">
-            <div class="container">
-                <div class="section-title-area">
-                    <div class="section-title">
-                        <div class="sub-title"><span>OUR BLOG</span>
-                        </div>
-                        <h2 class="split-text right">Our Latest Insights & Blog</h2>
-                        <p class="mt-3">Accelerate innovation with world-class tech teams We’ll match <br>
-                            you
-                            to an
-                            entire remote team of incredible</p>
-                    </div>
-                    <a href="" class="theme-btn">All Blog & News</a>
-                </div>
-                <div class="blog-inner">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="200ms">
-                            <div class="single-blog-item">
-                                <div class="image">
-                                    <img src="assets/img/blog/07.jpg" alt="">
-                                    <img src="assets/img/blog/07.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <ul>
-                                        <li>
-                                            Technology
-                                        </li>
-                                        <li> <i class="fas fa-circle"></i></li>
-                                        <li>
-                                            12 January, 2025
-                                        </li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blogs-details.html">Planning your online business goals with a
-                                            specialist</a>
-                                    </h3>
-                                    <p>
-                                        Accelerate innovation with world-class tech teams We’ll match you to an entire
-                                        remote
-                                    </p>
-                                    <a href="blogs-details.html" class="theme-btn mt-3 trasparent-btn">
-                                        More Details
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="single-blog-item">
-                                <div class="image">
-                                    <img src="assets/img/blog/08.jpg" alt="">
-                                    <img src="assets/img/blog/08.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <ul>
-                                        <li>
-                                            Technology
-                                        </li>
-                                        <li> <i class="fas fa-circle"></i></li>
-                                        <li>
-                                            12 January, 2025
-                                        </li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blogs-details.html">Holistic Healing: Exploring Health Coaching
-                                            Techniques</a>
-                                    </h3>
-                                    <p>
-                                        Accelerate innovation with world-class tech teams We’ll match you to an entire
-                                        remote
-                                    </p>
-                                    <a href="blogs-details.html" class="theme-btn mt-3 trasparent-btn">
-                                        More Details
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="600ms">
-                            <div class="single-blog-item">
-                                <div class="image">
-                                    <img src="assets/img/blog/09.jpg" alt="">
-                                    <img src="assets/img/blog/09.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <ul>
-                                        <li>
-                                            Technology
-                                        </li>
-                                        <li> <i class="fas fa-circle"></i></li>
-                                        <li>
-                                            12 January, 2025
-                                        </li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blogs-details.html">The Art of Self-Care: Lessons from Health
-                                            Coaching</a>
-                                    </h3>
-                                    <p>
-                                        Accelerate innovation with world-class tech teams We’ll match you to an entire
-                                        remote
-                                    </p>
-                                    <a href="blogs-details.html" class="theme-btn mt-3 trasparent-btn">
-                                        More Details
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+ <section class="blog-wrapper blog-1 style-3 section-padding section-bg">
+  <div class="container">
+    <div class="section-title-area">
+      <div class="section-title">
+        <div class="sub-title"><span>OUR BLOG</span></div>
+        <h2 class="split-text right">Our Latest Insights & Blog</h2>
+        <p class="mt-3">Discover the latest trends, tips, and case studies from our tech experts.</p>
+      </div>
+      <a href="blogs-grid.html" class="theme-btn">All Blog & News</a>
+    </div>
+    <div class="blog-inner">
+      <div class="row">
+        <!-- Firebase will inject blog cards here -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
         <!-- Footer Section Start -->
                <footer class="footer-wrapper section-bg-2 section-padding pb-0">
@@ -2198,6 +2132,144 @@ infrastructure, tailored solutions, and a team that cares.
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAN4py9_gR4YNoy61PaRpI6bBJogCwO0-k",
+    authDomain: "bluelink-5ce30.firebaseapp.com",
+    databaseURL: "https://bluelink-5ce30-default-rtdb.firebaseio.com",
+    projectId: "bluelink-5ce30",
+    storageBucket: "bluelink-5ce30.appspot.com",
+    messagingSenderId: "123281071731",
+    appId: "1:123281071731:web:51595031d3f4124b70d406",
+    measurementId: "G-52W50YXCBX"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+  const blogRow = document.querySelector(".blog-inner .row");
+
+  firebase.database().ref("blogPost").limitToLast(3).once("value").then(snapshot => {
+    blogRow.innerHTML = ""; // Clear hardcoded content
+    const delayStep = 200;
+    let index = 0;
+
+    snapshot.forEach(childSnapshot => {
+      const blog = childSnapshot.val();
+      const eventId = childSnapshot.key;
+      const delay = delayStep * (index + 1);
+      index++;
+
+      const blogHTML = `
+        <div class="col-xl-4 col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="${delay}ms">
+          <div class="single-blog-item">
+            <div class="image">
+              <img src="${blog.blogImageUrl || 'assets/img/blog/default.jpg'}" alt="">
+            </div>
+            <div class="content">
+              <ul>
+                <li>${blog.technology || 'Technology'}</li>
+                <li><i class="fas fa-circle"></i></li>
+                <li>${new Date(blog.datePosted).toLocaleDateString()}</li>
+              </ul>
+              <h3><a href="blogs-details.html?id=${eventId}">${blog.title}</a></h3>
+              <p>${blog.content.slice(0, 100)}...</p>
+              <a href="blogs-details.html?id=${eventId}" class="theme-btn mt-3 trasparent-btn">More Details</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      blogRow.insertAdjacentHTML("beforeend", blogHTML);
+    });
+  });
+</script>
+
+<!-- Contact Form Backend -->
+
+<!-- reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- Budget Slider and Form Logic -->
+<script>
+    $(document).ready(function () {
+        $("#slider-range").slider({
+            range: true,
+            min: 56,
+            max: 1578,
+            values: [56, 789],
+            slide: function (event, ui) {
+                $(".min").text("$" + ui.values[0]);
+                $(".max").text("$" + ui.values[1]);
+                $("#budget").val(ui.values[0] + " - " + ui.values[1]);
+            }
+        });
+
+        $(".min").text("$" + $("#slider-range").slider("values", 0));
+        $(".max").text("$" + $("#slider-range").slider("values", 1));
+        $("#budget").val($("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
+    });
+</script>
+
+<!-- Form Submission with Validation -->
+<script>
+    const form = document.getElementById('contact-form');
+    const termsCheckbox = document.getElementById('flexCheckDefault');
+    const submitButton = document.querySelector('button[type="submit"]');
+    const formMessage = document.querySelector('.form-message');
+
+    function updateSubmitState() {
+        const termsAccepted = termsCheckbox.checked;
+        const captchaResponse = grecaptcha.getResponse();
+        submitButton.disabled = !(termsAccepted && captchaResponse.length > 0);
+    }
+
+    termsCheckbox.addEventListener('change', updateSubmitState);
+    setInterval(updateSubmitState, 500);
+    submitButton.disabled = true;
+
+    function recaptchaCallback() {
+        updateSubmitState();
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const termsAccepted = termsCheckbox.checked;
+        const captchaResponse = grecaptcha.getResponse();
+
+        if (!termsAccepted || captchaResponse.length === 0) {
+            alert("Please accept the terms and complete the reCAPTCHA.");
+            return;
+        }
+
+        const formData = new FormData(form);
+
+        fetch('contact.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(data => {
+                formMessage.innerHTML = `<span style="color: green;">${data}</span>`;
+                form.reset();
+                grecaptcha.reset();
+                submitButton.disabled = true;
+            })
+            .catch(error => {
+                formMessage.innerHTML = `<span style="color: red;">Submission failed. Please try again.</span>`;
+                console.error('Error:', error);
+            });
+
+        formMessage.innerText = "Sending message...";
+    });
+</script>
+
+
 </body>
 
 </html>
