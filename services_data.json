@@ -1,12 +1,12 @@
 {
   "it-consulting": {
     "title": "IT Solutions and Consulting",
-    "description": "Expert IT strategies tailored to enhance business performance.",
-    "image": "assets/img/Services/CCTV.svg",
+    "description": "Expert IT strategies tailored to enhance business performance, including infrastructure planning, cloud migration, cybersecurity, server deployment, and scalable IT architecture for startups and enterprises.",
+    "image": "assets/img/Services/background/IT.jpg",
     "subtitle": "Professional IT Guidance",
-    "paragraph1": "We offer consulting and implementation services for IT transformation.",
-    "paragraph2": "Boost productivity and security with our expert technology insights.",
-    "videoImage": "assets/img/service/details-it-video.jpg",
+    "paragraph1": "Our IT consulting services encompass a comprehensive range of solutions including infrastructure assessment, network design, cloud strategy and migration, hardware/software optimization, and IT compliance auditing. Whether you are building a new IT environment or upgrading an existing one, our team ensures the technology aligns with your business goals.",
+    "paragraph2": "We help businesses implement efficient server solutions, secure networks, disaster recovery plans, and IT governance frameworks. Our proactive approach includes managed IT support, software recommendations, remote monitoring, and tailored roadmaps that drive digital transformation and long-term efficiency.",
+    "videoImage": "assets/img/Services/background/IT.jpg",
     "videoLink": "https://youtu.be/6stlCkUDG_s?si=H_IdeVDJquPoIiP9",
     "videoTitle": "Our IT Approach",
     "videoDescription": "How we transform IT for modern businesses.",
@@ -17,7 +17,7 @@
   "networking": {
     "title": "Networking and Structured Cabling",
     "description": "Reliable cabling and networking for smooth digital operations.",
-    "image": "assets/img/service/details-networking.jpg",
+    "image": "assets/img/Services/background/Network_tower.jpg",
     "subtitle": "Efficient Network Solutions",
     "paragraph1": "From small offices to enterprises, we build strong networks.",
     "paragraph2": "Enjoy high-speed, secure connectivity throughout your premises.",
@@ -32,7 +32,7 @@
   "voip": {
     "title": "VoIP and Telecommunication Solutions",
     "description": "Clear, cost-effective communication via voice over IP.",
-    "image": "assets/img/service/details-voip.jpg",
+    "image": "assets/img/Services/background/Network_tower.jpg",
     "subtitle": "Modern Telephony Services",
     "paragraph1": "Upgrade your business calls with advanced VoIP solutions.",
     "paragraph2": "Affordable calling and conferencing with crystal-clear audio.",
@@ -47,7 +47,7 @@
   "server": {
     "title": "Server Installation and Maintenance",
     "description": "Secure and scalable server setup and care.",
-    "image": "assets/img/service/details-server.jpg",
+    "image": "assets/img/Services/background/server.jpg",
     "subtitle": "Reliable Server Infrastructure",
     "paragraph1": "We configure physical and cloud-based servers for performance.",
     "paragraph2": "Ongoing monitoring and backup ensure your data stays safe.",
@@ -62,7 +62,7 @@
   "cybersecurity": {
     "title": "Cybersecurity and Hardware Solutions",
     "description": "Protect business data and infrastructure from threats.",
-    "image": "assets/img/service/details-cyber.jpg",
+    "image": "assets/img/Services/background/cyber_security.jpg",
     "subtitle": "End-to-End Security",
     "paragraph1": "Antivirus, firewalls, and intrusion prevention built-in.",
     "paragraph2": "Custom hardware defense systems for sensitive environments.",
@@ -77,7 +77,7 @@
   "support": {
     "title": "Software & Hardware Support",
     "description": "End-to-end assistance for tech issues and updates.",
-    "image": "assets/img/service/details-support.jpg",
+    "image": "assets/img/Services/background/lab.jpg",
     "subtitle": "24/7 Tech Help",
     "paragraph1": "We troubleshoot hardware failures and software bugs.",
     "paragraph2": "Remote and onsite support to minimize disruptions.",
@@ -92,7 +92,7 @@
   "web-dev": {
     "title": "Website & App Development and Hosting",
     "description": "Build modern digital platforms with full-service hosting.",
-    "image": "assets/img/service/details-web.jpg",
+    "image": "assets/img/Services/background/programming.jpg",
     "subtitle": "Fast, Scalable Applications",
     "paragraph1": "We design and deploy responsive websites and apps.",
     "paragraph2": "High-speed, secure hosting included in every package.",
@@ -107,7 +107,7 @@
   "access-control": {
     "title": "Access Controls",
     "description": "Manage entry with biometric and smart access systems.",
-    "image": "assets/img/service/details-access.jpg",
+    "image": "assets/img/Services/background/biometric.jpg",
     "subtitle": "Smarter Access Management",
     "paragraph1": "Facial recognition and keyless systems for secure access.",
     "paragraph2": "Real-time logs and user tracking included.",
@@ -122,7 +122,7 @@
   "audio-visual": {
     "title": "Audio - Visual Solutions",
     "description": "Enhance engagement with integrated audio-visual setups.",
-    "image": "assets/img/service/details-av.jpg",
+    "image": "assets/img/Services/background/IT.jpg",
     "subtitle": "Immersive Media Environments",
     "paragraph1": "From boardrooms to auditoriums, AV done right.",
     "paragraph2": "Professional display, sound, and conferencing solutions.",
@@ -137,7 +137,7 @@
   "smart-automation": {
     "title": "Smart Home & Office Automation",
     "description": "Control lighting, security, and devices intelligently.",
-    "image": "assets/img/service/details-smart.jpg",
+    "image": "assets/img/Services/background/automation.jpg",
     "subtitle": "Automation at Your Fingertips",
     "paragraph1": "Voice and app controlled systems for comfort and efficiency.",
     "paragraph2": "Schedules and routines make automation seamless.",
@@ -152,7 +152,7 @@
   "surveillance": {
     "title": "Security and Surveillance Solutions",
     "description": "Protect people and property with smart surveillance systems.",
-    "image": "assets/img/service/details-security.jpg",
+    "image": "assets/img/Services/background/CCTV.jpg",
     "subtitle": "Eyes Everywhere",
     "paragraph1": "CCTV, motion sensors, and remote access monitoring.",
     "paragraph2": "Compliant setups for corporate and retail environments.",
@@ -167,7 +167,7 @@
   "digital-signage": {
     "title": "Digital Signage Solutions",
     "description": "Deliver engaging content through dynamic digital screens.",
-    "image": "assets/img/service/details-signage.jpg",
+    "image": "assets/img/Services/background/digital_marketing.jpg",
     "subtitle": "Smart Content Displays",
     "paragraph1": "Schedule, update, and animate content remotely.",
     "paragraph2": "Retail, hospitality, education – signage for all needs.",
