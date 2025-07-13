@@ -39,17 +39,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'techysanan@gmail.com'; // Your Gmail
-        $mail->Password   = 'rigdiohvrinmexel'; // 16-char app password
+        $mail->Username   = 'blogs.bluelinkltd@gmail.com'; // Your Gmail
+        $mail->Password   = 'rigdiohvrinmexel'; // 16-char app password.  blue link key lbqd azga dolw wcax
+        $mail->Password   = 'lbqdazgadolwwcax';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = 465;
         // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         // $mail->Port       = 587;
 
         // Recipients
-        $mail->setFrom('techysanan@gmail.com', 'Website Contact');
+        $mail->setFrom('bluelinkltdca@gmail.com', 'Website Contact');
+        $mail->addAddress('blogs.bluelinkltd@gmail.com');
         // $mail->addAddress('bluelinkltdca@gmail.com');
-        $mail->addAddress('techysanan@gmail.com');
 
 
         // Email content
